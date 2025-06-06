@@ -3,124 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Gary McRae | Fractional CMO Leadership Singapore & Asia</title>
-  <meta name="description" content="I’m Gary McRae. I help businesses in Singapore and Asia grow with future-focused marketing leadership.">
-  <!-- Tailwind CDN -->
+  <title>Gary McRae | Fractional CMO Leadership in Singapore & Asia</title>
+  <meta name="description" content="Hi, I’m Gary. I help businesses in Singapore and Asia grow with future-focused marketing leadership.">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
     .font-heading { font-family: 'Montserrat', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    /* Animated gradient background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: -2;
+      background: linear-gradient(120deg, #0ea5e9, #a21caf, #f472b6, #22d3ee);
+      background-size: 400% 400%;
+      animation: gradientMove 18s ease infinite;
+    }
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    /* Glassmorphism effect for cards */
     .glass {
       background: rgba(16, 18, 40, 0.7);
       box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 18px;
+      border: 1.5px solid rgba(255,255,255,0.14);
     }
-    html { scroll-behavior: smooth; }
+    /* For text contrast */
+    .text-glow {
+      text-shadow: 0 2px 12px rgba(0,0,0,0.30), 0 1px 0 #fff2;
+    }
+    .faq-q {
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .faq-q:hover {
+      color: #22d3ee;
+    }
   </style>
 </head>
-<body class="bg-gradient-to-br from-slate-950 via-indigo-900 to-fuchsia-900 text-white">
+<body class="text-white min-h-screen">
 
-  <!-- HERO SECTION -->
-  <header class="min-h-screen flex flex-col justify-center items-center relative text-center px-4">
-    <div class="absolute inset-0 bg-gradient-to-br from-fuchsia-600/60 via-indigo-800/80 to-slate-900/90 pointer-events-none"></div>
-    <div class="relative z-10 max-w-2xl w-full">
-      <img src="https://placehold.co/160x160/00ffe7/23213c?text=Gary" alt="Gary McRae" class="mx-auto rounded-full border-4 border-fuchsia-500 shadow-xl mb-6" />
-      <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4 tracking-tight bg-gradient-to-r from-cyan-300 via-fuchsia-400 to-blue-400 text-transparent bg-clip-text">
-        Future-Focused Fractional CMO for Singapore
+  <!-- Floating Glass Nav -->
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-30 glass px-6 py-3 rounded-full flex gap-6 shadow-md border border-fuchsia-700 backdrop-blur-sm">
+    <a href="#about" class="hover:text-cyan-300 transition font-heading">About</a>
+    <a href="#services" class="hover:text-cyan-300 transition font-heading">Services</a>
+    <a href="#why" class="hover:text-cyan-300 transition font-heading">Why Me?</a>
+    <a href="#faq" class="hover:text-cyan-300 transition font-heading">FAQ</a>
+    <a href="#contact" class="hover:text-cyan-300 transition font-heading">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="min-h-[90vh] flex flex-col justify-center items-center relative text-center px-4">
+    <div class="relative z-10 max-w-2xl w-full mt-24 mb-4">
+      <img src="https://placehold.co/160x160/00ffe7/23213c?text=Gary" alt="Gary McRae" class="mx-auto rounded-full border-4 border-cyan-400 shadow-xl mb-6" />
+      <h1 class="font-heading text-4xl md:text-5xl font-bold mb-5 tracking-tight bg-gradient-to-r from-cyan-200 via-fuchsia-300 to-blue-300 text-transparent bg-clip-text text-glow">
+        Fractional CMO in Singapore, Ready for the Future
       </h1>
-      <p class="text-xl md:text-2xl text-white/80 mb-8">Hi, I’m Gary. I help ambitious businesses in Singapore and Asia unlock growth using tech-driven marketing, sharp strategy, and a personal touch.</p>
-      <a href="#contact" class="inline-block bg-fuchsia-500 hover:bg-cyan-400 transition text-slate-900 font-bold px-8 py-4 rounded-full text-lg shadow-lg">Let’s Connect</a>
+      <p class="text-xl md:text-2xl text-white/95 mb-8 text-glow">Hi, I’m Gary. I help ambitious businesses across Singapore and Asia grow, adapt, and thrive with marketing leadership that’s always a step ahead.</p>
+      <a href="#contact" class="inline-block bg-cyan-400 hover:bg-fuchsia-400 transition text-slate-900 font-bold px-8 py-4 rounded-full text-lg shadow-lg">Start a Conversation</a>
     </div>
     <div class="absolute bottom-6 left-0 right-0 flex justify-center z-10">
-      <a href="#about" class="animate-bounce text-fuchsia-400 hover:text-cyan-300 text-3xl">&#8595;</a>
+      <a href="#about" class="animate-bounce text-cyan-300 hover:text-fuchsia-300 text-3xl">&#8595;</a>
     </div>
   </header>
 
-  <!-- NAVIGATION (floating, future style) -->
-  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-30 bg-slate-950/80 glass px-6 py-3 rounded-full flex gap-6 shadow-md border border-fuchsia-800">
-    <a href="#about" class="hover:text-fuchsia-300 transition font-heading">About</a>
-    <a href="#services" class="hover:text-fuchsia-300 transition font-heading">Services</a>
-    <a href="#why" class="hover:text-fuchsia-300 transition font-heading">Why Me?</a>
-    <a href="#testimonials" class="hover:text-fuchsia-300 transition font-heading">Testimonials</a>
-    <a href="#contact" class="hover:text-fuchsia-300 transition font-heading">Contact</a>
-  </nav>
-
-  <!-- ABOUT SECTION -->
+  <!-- ABOUT + MEDIA -->
   <section id="about" class="py-24 px-4 flex flex-col items-center">
     <div class="max-w-3xl mx-auto glass p-8 text-center">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-fuchsia-400 to-cyan-300 text-transparent bg-clip-text">Who Am I?</h2>
-      <p class="text-lg md:text-xl text-white/90 mb-4">I’m Gary McRae, a Fractional CMO with a passion for helping Singapore and Asian businesses stay ahead. My approach is all about blending technology, creativity, and real-world experience. I don’t just advise—I roll up my sleeves and work with you, so you actually see progress.</p>
-      <p class="text-lg md:text-xl text-white/70">If you want a marketing partner who’s future-focused but always human, that’s me. Let’s build your next chapter together.</p>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-fuchsia-400 to-cyan-200 text-transparent bg-clip-text">A Bit About Me</h2>
+      <p class="text-lg md:text-xl text-white/90 mb-4 text-glow">
+        I’m Gary McRae, a Fractional CMO who’s helped businesses in Singapore and across Asia leap forward with marketing that’s clear, creative, and effective. Most of my clients want someone who’s hands-on, not just handing out slide decks. That’s exactly what I do. 
+      </p>
+      <p class="text-lg md:text-xl text-white/80 mb-4 text-glow">
+        I love working with founders and teams who want to make a difference. My style is all about listening, building trust, and using smart tech and fresh ideas to get you ahead. I’m as comfortable coaching teams as I am driving growth for startups, scale-ups, and established brands.
+      </p>
+      <div class="flex flex-wrap justify-center items-center gap-4 mt-6">
+        <a href="https://www.linkedin.com/in/garymcrae/" target="_blank" class="bg-cyan-600 hover:bg-fuchsia-500 px-5 py-2 rounded-full font-bold text-white shadow transition">Connect on LinkedIn</a>
+        <a href="https://open.spotify.com/show/49AQPfL7RZRTyU7q92p0Ha" target="_blank" class="bg-fuchsia-600 hover:bg-cyan-400 px-5 py-2 rounded-full font-bold text-white shadow transition">Podcasts</a>
+        <a href="https://www.mcr.ae/gary-mcrae" target="_blank" class="bg-white/10 hover:bg-white/25 px-5 py-2 rounded-full font-bold text-cyan-200 shadow transition">More About Me</a>
+      </div>
     </div>
   </section>
 
-  <!-- SERVICES SECTION -->
+  <!-- SERVICES -->
   <section id="services" class="py-24 px-4 flex flex-col items-center">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-10 text-center bg-gradient-to-r from-cyan-300 to-fuchsia-400 text-transparent bg-clip-text">How I Can Help</h2>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-10 text-center bg-gradient-to-r from-cyan-200 to-fuchsia-200 text-transparent bg-clip-text">How I Help</h2>
       <div class="grid md:grid-cols-4 gap-8">
         <div class="glass p-6 text-center">
-          <h3 class="font-heading text-xl text-fuchsia-300 mb-3">Fractional CMO</h3>
-          <p class="text-white/85">Get senior marketing leadership on your team, just when you need it. You’ll have expertise, not overhead.</p>
+          <h3 class="font-heading text-xl text-cyan-200 mb-3">Fractional CMO</h3>
+          <p class="text-white/90 text-glow">Get senior marketing leadership on your team when you need it. You get results, not overhead.</p>
         </div>
         <div class="glass p-6 text-center">
-          <h3 class="font-heading text-xl text-fuchsia-300 mb-3">Tech & Data Strategy</h3>
-          <p class="text-white/85">Let’s use the best digital tools and AI to grow your brand and make smarter decisions, fast.</p>
+          <h3 class="font-heading text-xl text-cyan-200 mb-3">Tech and Data Strategy</h3>
+          <p class="text-white/90 text-glow">I help you use digital tools, AI, and data to make smarter decisions and accelerate your brand’s growth.</p>
         </div>
         <div class="glass p-6 text-center">
-          <h3 class="font-heading text-xl text-fuchsia-300 mb-3">Brand for Tomorrow</h3>
-          <p class="text-white/85">Stand out with a brand that feels modern, trusted, and memorable—built for the Singapore audience and beyond.</p>
+          <h3 class="font-heading text-xl text-cyan-200 mb-3">Brand for Tomorrow</h3>
+          <p class="text-white/90 text-glow">Let’s create a brand that feels modern, trusted, and memorable—built for Singapore and beyond.</p>
         </div>
         <div class="glass p-6 text-center">
-          <h3 class="font-heading text-xl text-fuchsia-300 mb-3">Mentoring & Upskilling</h3>
-          <p class="text-white/85">I help your team get future-ready, with workshops and hands-on coaching in digital, strategic, and creative skills.</p>
+          <h3 class="font-heading text-xl text-cyan-200 mb-3">Mentoring & Upskilling</h3>
+          <p class="text-white/90 text-glow">I love helping teams get future-ready, with hands-on workshops and coaching in digital and leadership skills.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY ME SECTION -->
+  <!-- WHY ME -->
   <section id="why" class="py-24 px-4 flex flex-col items-center">
     <div class="max-w-3xl mx-auto glass p-8 text-center">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-300 to-fuchsia-400 text-transparent bg-clip-text">Why Work With Me?</h2>
-      <ul class="text-lg text-white/90 mb-4 space-y-3 text-left inline-block">
-        <li><span class="text-fuchsia-400 font-bold">Real experience</span> in Singapore and Asia, not theory</li>
-        <li><span class="text-fuchsia-400 font-bold">Future-focused</span> but always practical and personal</li>
-        <li><span class="text-fuchsia-400 font-bold">Tech and creative</span>—I love using AI and smart tools, but always keep the human touch</li>
-        <li><span class="text-fuchsia-400 font-bold">Easy to work with</span>—I listen, I care, and I get things done</li>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-200 to-fuchsia-200 text-transparent bg-clip-text">Why Work With Me?</h2>
+      <ul class="text-lg text-white/95 mb-4 space-y-3 text-left inline-block text-glow">
+        <li><span class="text-cyan-200 font-bold">Real experience</span> in Singapore and Asia, not just theory</li>
+        <li><span class="text-cyan-200 font-bold">Always future-focused</span> but practical and personal</li>
+        <li><span class="text-cyan-200 font-bold">Tech and creative</span>—I love using AI and smart tools, but always with a human approach</li>
+        <li><span class="text-cyan-200 font-bold">Easy to work with</span>—I listen, I care, and I get things done</li>
       </ul>
-      <p class="text-lg text-white/70">If you want to build something bold, let’s make it happen together.</p>
+      <p class="text-lg text-white/80 text-glow">If you want to build something bold and lasting, let’s chat and make it happen together.</p>
     </div>
   </section>
 
-  <!-- TESTIMONIALS SECTION -->
+  <!-- FAQ (from mcr.ae/fractional-cmo-singapore, rewritten) -->
+  <section id="faq" class="py-24 px-4 flex flex-col items-center">
+    <div class="max-w-3xl mx-auto glass p-8">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-fuchsia-200 to-cyan-200 text-transparent bg-clip-text text-center">FAQ: Fractional CMO in Singapore</h2>
+      <div class="space-y-6">
+        <details class="rounded bg-white/5 px-4 py-3">
+          <summary class="faq-q font-heading text-cyan-200 text-lg">What is a Fractional CMO?</summary>
+          <div class="mt-2 text-white/90 text-glow">
+            A Fractional CMO is a part-time marketing leader, working with your team as needed. You get top-level strategy and hands-on help, without hiring a full-time executive.
+          </div>
+        </details>
+        <details class="rounded bg-white/5 px-4 py-3">
+          <summary class="faq-q font-heading text-cyan-200 text-lg">How is this different to hiring an agency?</summary>
+          <div class="mt-2 text-white/90 text-glow">
+            An agency is usually external, juggling multiple clients and often selling fixed packages. As your Fractional CMO, I’m part of your team. I care about your business and your results, and I’m there for strategy, leadership, and action—not just campaigns.
+          </div>
+        </details>
+        <details class="rounded bg-white/5 px-4 py-3">
+          <summary class="faq-q font-heading text-cyan-200 text-lg">Why hire a Fractional CMO in Singapore?</summary>
+          <div class="mt-2 text-white/90 text-glow">
+            Singapore’s market moves fast. You may need senior marketing help, but not a full-time CMO. I provide local knowledge, regional experience, and a flexible way to get leadership when you need it most.
+          </div>
+        </details>
+        <details class="rounded bg-white/5 px-4 py-3">
+          <summary class="faq-q font-heading text-cyan-200 text-lg">What kind of companies do you work with?</summary>
+          <div class="mt-2 text-white/90 text-glow">
+            I work with founders, startups, scale-ups, and established brands—anyone who wants to grow and values honest, hands-on support. Most of my clients are based in Singapore or want to grow in Asia.
+          </div>
+        </details>
+        <details class="rounded bg-white/5 px-4 py-3">
+          <summary class="faq-q font-heading text-cyan-200 text-lg">Can you help my team with AI and digital transformation?</summary>
+          <div class="mt-2 text-white/90 text-glow">
+            Absolutely. I help teams use new tools and AI in ways that make sense, so you’re not just following trends—you’re getting results.
+          </div>
+        </details>
+        <details class="rounded bg-white/5 px-4 py-3">
+          <summary class="faq-q font-heading text-cyan-200 text-lg">How do we start working together?</summary>
+          <div class="mt-2 text-white/90 text-glow">
+            Super simple. Just send me a WhatsApp or use the form below. We’ll have a chat, see if we’re a fit, and outline a plan that works for you.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
   <section id="testimonials" class="py-24 px-4 flex flex-col items-center">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-10 text-center bg-gradient-to-r from-fuchsia-400 to-cyan-300 text-transparent bg-clip-text">What Clients Say</h2>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-10 text-center bg-gradient-to-r from-fuchsia-200 to-cyan-200 text-transparent bg-clip-text">What Clients Say</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="glass p-6">
           <p class="italic text-xl mb-4">“Gary brought us fresh ideas and real results. He’s always ahead of the curve, but never forgets the human side.”</p>
-          <div class="font-semibold text-fuchsia-300">– Alex, SME Owner</div>
+          <div class="font-semibold text-cyan-200">– Alex, SME Owner</div>
         </div>
         <div class="glass p-6">
           <p class="italic text-xl mb-4">“If you want a tech-savvy CMO who gets Singapore, Gary is the one to call. No jargon, just smart action.”</p>
-          <div class="font-semibold text-fuchsia-300">– Priya, Startup Founder</div>
+          <div class="font-semibold text-cyan-200">– Priya, Startup Founder</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- CONTACT -->
   <section id="contact" class="py-24 px-4 flex flex-col items-center">
     <div class="max-w-2xl mx-auto glass p-8 text-center">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-300 to-fuchsia-400 text-transparent bg-clip-text">Let’s Talk</h2>
-      <p class="text-lg text-white/85 mb-6">Curious about working together? Message me directly on WhatsApp for a quick reply, or fill out the form and I’ll get back to you soon.</p>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-200 to-fuchsia-200 text-transparent bg-clip-text">Let’s Talk</h2>
+      <p class="text-lg text-white/90 mb-6 text-glow">Curious about working together? Message me on WhatsApp or fill out the form and I’ll get back to you soon.</p>
       <div class="flex justify-center mb-8">
-        <a href="https://wa.me/6588227111" target="_blank" class="inline-flex items-center px-8 py-4 bg-cyan-400 hover:bg-fuchsia-500 transition text-slate-900 font-bold rounded-full shadow-lg text-lg">
+        <a href="https://wa.me/6588227111" target="_blank" class="inline-flex items-center px-8 py-4 bg-cyan-400 hover:bg-fuchsia-400 transition text-slate-900 font-bold rounded-full shadow-lg text-lg">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m-4 4h10"/></svg>
           WhatsApp Me
         </a>
@@ -147,7 +229,7 @@
   <!-- FOOTER -->
   <footer class="bg-slate-950 text-white/70 py-6 text-center mt-10">
     <p class="mb-1 text-base">&copy; <span id="year"></span> Gary McRae. Fractional CMO, Singapore & Asia.</p>
-    <p class="text-xs text-fuchsia-300">Built for the future.</p>
+    <p class="text-xs text-cyan-200">Built for the future.</p>
   </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
