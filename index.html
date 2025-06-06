@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gary McRae | Fractional CMO in Singapore & Asia</title>
-  <meta name="description" content="Hi, I’m Gary. I help businesses in Singapore and across Asia grow with hands-on, future-focused marketing leadership." />
+  <title>Gary McRae | Fractional CMO Singapore & Asia</title>
+  <meta name="description" content="I’m Gary. I help businesses in Singapore and Asia break through with Fractional CMO leadership, digital know-how, and hands-on partnership." />
   <meta name="robots" content="noindex, nofollow" />
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,31 +13,40 @@
     body { font-family: 'Inter', sans-serif; }
     .font-heading { font-family: 'Montserrat', sans-serif; }
     html { scroll-behavior: smooth; }
-    /* Animated gradient background */
+
+    /* Animated gradient background for hero */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       z-index: -2;
-      background: linear-gradient(120deg, #2e1065, #0ea5e9, #f472b6, #22d3ee 90%);
+      background: linear-gradient(120deg, #2e1065, #0ea5e9 40%, #f472b6 80%, #fff 100%);
       background-size: 300% 300%;
-      animation: gradientFlow 20s ease-in-out infinite;
+      animation: gradientFlow 18s ease-in-out infinite;
     }
     @keyframes gradientFlow {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    .glass {
-      background: rgba(36, 39, 65, 0.82);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.21);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 20px;
-      border: 1.5px solid rgba(255,255,255,0.10);
+
+    /* Section curves for smooth transitions */
+    .curve-top {
+      margin-top: -1px;
+      display: block;
+      width: 100%;
+      height: 60px;
+      padding: 0;
+    }
+    .curve-bottom {
+      margin-bottom: -1px;
+      display: block;
+      width: 100%;
+      height: 60px;
+      padding: 0;
     }
     .text-glow {
-      text-shadow: 0 2px 14px rgba(0,0,0,0.25), 0 1px 0 #fff3;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.24), 0 1px 0 #fff3;
     }
     .iconbox {
       background: linear-gradient(135deg, #0ea5e9 60%, #f472b6);
@@ -50,165 +59,122 @@
       margin: 0 auto 1rem auto;
       box-shadow: 0 2px 12px #0ea5e9aa;
     }
-    .wave {
-      display: block;
-      width: 100%;
-      height: 60px;
-      margin: 0;
-      padding: 0;
-    }
   </style>
 </head>
-<body class="text-white min-h-screen">
+<body class="text-[#232144] min-h-screen">
 
   <!-- NAV -->
-  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-40 glass px-6 py-3 rounded-full flex gap-6 shadow-md border border-sky-700 backdrop-blur-lg">
-    <a href="#about" class="hover:text-cyan-300 transition font-heading">About</a>
-    <a href="#services" class="hover:text-cyan-300 transition font-heading">Services</a>
-    <a href="#why" class="hover:text-cyan-300 transition font-heading">Why Me?</a>
-    <a href="#contact" class="hover:text-cyan-300 transition font-heading">Contact</a>
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-40 bg-white/80 px-6 py-3 rounded-full flex gap-6 shadow-md border border-sky-200 backdrop-blur-lg font-heading font-bold text-[#232144]">
+    <a href="#about" class="hover:text-cyan-600 transition">About</a>
+    <a href="#services" class="hover:text-cyan-600 transition">What I Do</a>
+    <a href="#why" class="hover:text-cyan-600 transition">Why Me?</a>
+    <a href="#contact" class="hover:text-cyan-600 transition">Contact</a>
   </nav>
 
-  <!-- HERO -->
-  <header class="min-h-[95vh] flex flex-col justify-center items-center text-center px-4 relative">
-    <div class="relative z-10 max-w-3xl w-full mt-28 mb-10 animate-fadein">
-      <!-- No photo for now: Just bold text and color -->
-      <h1 class="font-heading text-5xl md:text-6xl font-bold mb-6 tracking-tight bg-gradient-to-r from-cyan-200 via-fuchsia-400 to-blue-300 text-transparent bg-clip-text text-glow">
-        Future-Ready Fractional CMO for Singapore and Asia
-      </h1>
-      <p class="text-2xl md:text-2xl text-white/95 mb-10 text-glow">
-        I’m Gary, and I help ambitious businesses unlock growth with hands-on marketing leadership, sharp strategy, and a human touch.
-      </p>
-      <a href="#contact" class="inline-block bg-cyan-400 hover:bg-fuchsia-400 transition text-slate-900 font-bold px-10 py-4 rounded-full text-xl shadow-xl">Let’s Get Started</a>
+  <!-- HERO SECTION -->
+  <header class="min-h-[90vh] flex flex-col justify-center items-center text-center px-4 relative">
+    <div class="relative z-10 max-w-3xl w-full mt-28 mb-10">
+      <h1 class="font-heading text-5xl md:text-6xl font-bold mb-6 tracking-tight bg-gradient-to-r from-cyan-300 via-fuchsia-400 to-blue-400 text-transparent bg-clip-text text-glow">Ready to launch your next level of growth?</h1>
+      <p class="text-2xl md:text-2xl text-white mb-10 text-glow font-semibold drop-shadow">I’m Gary. I help businesses in Singapore and Asia break through with Fractional CMO leadership, digital know-how, and hands-on partnership.</p>
+      <a href="#contact" class="inline-block bg-cyan-400 hover:bg-fuchsia-400 transition text-slate-900 font-bold px-10 py-4 rounded-full text-xl shadow-xl mt-2">Let’s get moving</a>
     </div>
     <div class="absolute bottom-6 left-0 right-0 flex justify-center z-10">
       <a href="#about" class="animate-bounce text-cyan-300 hover:text-fuchsia-300 text-3xl">&#8595;</a>
     </div>
   </header>
 
-  <!-- Decorative Wave -->
-  <svg class="wave" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#232144" fill-opacity="1" d="M0,0 C480,60 960,0 1440,60 L1440,60 L0,60 Z"></path></svg>
+  <!-- Curve transition to white section -->
+  <svg class="curve-bottom" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0,0 C480,60 960,0 1440,60 L1440,60 L0,60 Z"></path></svg>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-24 px-4 flex flex-col items-center bg-[#232144]">
-    <div class="max-w-3xl mx-auto glass p-10 text-center animate-fadein">
-      <h2 class="font-heading text-4xl font-bold mb-6 bg-gradient-to-r from-fuchsia-400 to-cyan-200 text-transparent bg-clip-text">Who I Am</h2>
-      <p class="text-xl text-white/90 mb-4 text-glow">
-        I help companies across Singapore and Asia punch above their weight. Whether you’re a founder, a startup, or a team ready for the next leap, I bring real-world experience, personal attention, and a future-focused approach. No jargon. No copy-paste playbooks. Just honest advice and action.
-      </p>
-    </div>
-  </section>
-
-  <!-- Decorative Wave -->
-  <svg class="wave" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#232144" fill-opacity="1" d="M0,60 C480,0 960,60 1440,0 L1440,60 L0,60 Z"></path></svg>
-
-  <!-- SERVICES -->
-  <section id="services" class="py-24 px-4 flex flex-col items-center bg-[#15132a]">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="font-heading text-4xl font-bold mb-10 text-center bg-gradient-to-r from-cyan-200 to-fuchsia-200 text-transparent bg-clip-text">How I Can Help</h2>
-      <div class="grid md:grid-cols-4 gap-10">
+  <!-- ABOUT / WHAT I DO: WHITE SECTION -->
+  <section id="about" class="py-24 px-4 bg-white text-[#232144]">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="font-heading text-4xl font-bold mb-8 bg-gradient-to-r from-fuchsia-400 to-cyan-400 text-transparent bg-clip-text">I’m here when you need:</h2>
+      <div class="grid md:grid-cols-4 gap-10 mt-12">
         <!-- Fractional CMO Icon -->
-        <div class="glass p-7 text-center animate-slidein">
+        <div>
           <div class="iconbox mb-2">
-            <!-- Custom SVG: Briefcase for Fractional CMO -->
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
               <rect x="6" y="12" width="20" height="12" rx="3" stroke="#fff" stroke-width="2"/>
               <rect x="12" y="8" width="8" height="6" rx="2" stroke="#fff" stroke-width="2"/>
               <rect x="14" y="18" width="4" height="4" rx="1" fill="#fff"/>
             </svg>
           </div>
-          <h3 class="font-heading text-xl text-cyan-200 mb-3">Fractional CMO</h3>
-          <p class="text-white/90 text-glow">Senior marketing leadership, only when you need it.</p>
+          <div class="font-heading text-xl font-semibold mb-2">Senior marketing strategy</div>
+          <div class="text-base text-slate-600">Only when you need it</div>
         </div>
-        <!-- Tech & Data Strategy Icon -->
-        <div class="glass p-7 text-center animate-slidein delay-100">
+        <div>
           <div class="iconbox mb-2">
-            <!-- Custom SVG: Data/Tech circuit -->
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
               <circle cx="16" cy="16" r="10" stroke="#fff" stroke-width="2"/>
               <circle cx="16" cy="16" r="3" fill="#fff"/>
               <path d="M16 6v7M26 16h-7M16 26v-7M6 16h7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3 class="font-heading text-xl text-cyan-200 mb-3">Tech and Data Strategy</h3>
-          <p class="text-white/90 text-glow">Smarter, faster growth with the right tools and insights.</p>
+          <div class="font-heading text-xl font-semibold mb-2">Tech and data</div>
+          <div class="text-base text-slate-600">To power up your business</div>
         </div>
-        <!-- Brand for Tomorrow Icon -->
-        <div class="glass p-7 text-center animate-slidein delay-200">
+        <div>
           <div class="iconbox mb-2">
-            <!-- Custom SVG: Star for brand -->
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
               <polygon points="16,5 19,14 29,14 21,19 24,28 16,22 8,28 11,19 3,14 13,14" stroke="#fff" stroke-width="2" fill="#fff" fill-opacity="0.3"/>
             </svg>
           </div>
-          <h3 class="font-heading text-xl text-cyan-200 mb-3">Brand for Tomorrow</h3>
-          <p class="text-white/90 text-glow">Build a brand that’s trusted, memorable, and ready for what’s next.</p>
+          <div class="font-heading text-xl font-semibold mb-2">A brand that stands out</div>
+          <div class="text-base text-slate-600">And feels future-ready</div>
         </div>
-        <!-- Mentoring & Upskilling Icon -->
-        <div class="glass p-7 text-center animate-slidein delay-300">
+        <div>
           <div class="iconbox mb-2">
-            <!-- Custom SVG: Lightbulb for Mentoring -->
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
               <ellipse cx="16" cy="14" rx="8" ry="9" stroke="#fff" stroke-width="2"/>
               <path d="M12 25h8M14 28h4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
               <rect x="13" y="23" width="6" height="4" rx="2" fill="#fff" fill-opacity="0.3"/>
             </svg>
           </div>
-          <h3 class="font-heading text-xl text-cyan-200 mb-3">Mentoring and Upskilling</h3>
-          <p class="text-white/90 text-glow">I help your team get future-ready, with hands-on coaching and workshops.</p>
+          <div class="font-heading text-xl font-semibold mb-2">Team mentoring</div>
+          <div class="text-base text-slate-600">So everyone levels up</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Decorative Wave -->
-  <svg class="wave" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#15132a" fill-opacity="1" d="M0,0 C480,60 960,0 1440,60 L1440,60 L0,60 Z"></path></svg>
+  <!-- Curve transition to color section -->
+  <svg class="curve-top" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#f7fafc" d="M0,60 C480,0 960,60 1440,0 L1440,60 L0,60 Z"></path></svg>
 
-  <!-- WHY ME -->
-  <section id="why" class="py-24 px-4 flex flex-col items-center bg-[#232144]">
-    <div class="max-w-3xl mx-auto glass p-10 text-center animate-fadein">
-      <h2 class="font-heading text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-200 to-fuchsia-200 text-transparent bg-clip-text">Why Work With Me?</h2>
-      <ul class="text-xl text-white/95 mb-5 space-y-4 text-left inline-block text-glow">
-        <li><span class="text-cyan-200 font-bold">Real experience</span> in Singapore and Asia</li>
-        <li><span class="text-cyan-200 font-bold">Future-focused</span>, but always practical and personal</li>
-        <li><span class="text-cyan-200 font-bold">Tech-savvy and creative</span>, but human first</li>
-        <li><span class="text-cyan-200 font-bold">Easy to work with</span>, honest, and hands-on</li>
+  <!-- WHY WORK WITH ME: Light Color Section -->
+  <section id="why" class="py-24 px-4 bg-[#f7fafc] text-[#232144]">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-heading text-4xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-transparent bg-clip-text">Why team up with me?</h2>
+      <ul class="text-xl mb-5 space-y-6 text-left inline-block mx-auto text-[#232144] font-semibold">
+        <li><span class="text-cyan-600 font-bold">I’ve done this across Asia:</span> real results, not just talk</li>
+        <li><span class="text-cyan-600 font-bold">I blend tech and creativity</span>, but stay human</li>
+        <li><span class="text-cyan-600 font-bold">You always get honesty and action,</span> never fluff</li>
       </ul>
     </div>
   </section>
 
-  <!-- Decorative Wave -->
-  <svg class="wave" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#232144" fill-opacity="1" d="M0,60 C480,0 960,60 1440,0 L1440,60 L0,60 Z"></path></svg>
+  <!-- Curve transition to dark section -->
+  <svg class="curve-top" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#15132a" d="M0,60 C480,0 960,60 1440,0 L1440,60 L0,60 Z"></path></svg>
 
-  <!-- CONTACT -->
-  <section id="contact" class="py-24 px-4 flex flex-col items-center bg-[#15132a]">
-    <div class="max-w-2xl mx-auto glass p-10 text-center animate-fadein">
-      <h2 class="font-heading text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-200 to-fuchsia-200 text-transparent bg-clip-text">Let’s Talk</h2>
-      <p class="text-xl text-white/90 mb-8 text-glow">Curious about working together? Message me on WhatsApp, email, or use the form and I’ll get back to you soon.</p>
-      <div class="flex flex-col md:flex-row justify-center gap-5 mb-10">
+  <!-- CONTACT: Dark Section -->
+  <section id="contact" class="py-24 px-4 bg-[#15132a] text-white">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="font-heading text-4xl font-bold mb-8 bg-gradient-to-r from-cyan-200 to-fuchsia-200 text-transparent bg-clip-text">Let’s have a quick chat</h2>
+      <p class="text-lg mb-8 text-white/80 font-semibold">WhatsApp me, send an email, or connect on LinkedIn. I’ll get back as soon as I can.</p>
+      <div class="flex flex-col md:flex-row justify-center gap-5 mb-2">
         <a href="https://wa.me/6588227111" target="_blank" class="inline-flex items-center px-8 py-4 bg-cyan-400 hover:bg-fuchsia-400 transition text-slate-900 font-bold rounded-full shadow-xl text-lg">
           WhatsApp Me
         </a>
         <a href="mailto:gary@mcr.ae" class="inline-flex items-center px-8 py-4 bg-fuchsia-400 hover:bg-cyan-400 transition text-slate-900 font-bold rounded-full shadow-xl text-lg">
           Email Me
         </a>
+        <a href="https://www.linkedin.com/in/garymcrae/" target="_blank" class="inline-flex items-center px-8 py-4 bg-white/10 hover:bg-cyan-400 hover:text-slate-900 text-cyan-200 font-bold rounded-full shadow-xl text-lg">
+          LinkedIn
+        </a>
       </div>
-      <form name="contact" method="POST" data-netlify="true" class="space-y-4">
-        <input type="hidden" name="form-name" value="contact">
-        <div>
-          <label class="block font-semibold mb-1 text-left" for="name">Your Name</label>
-          <input class="w-full rounded border border-cyan-400 p-3 bg-slate-900/70 text-white" type="text" id="name" name="name" required>
-        </div>
-        <div>
-          <label class="block font-semibold mb-1 text-left" for="email">Your Email</label>
-          <input class="w-full rounded border border-cyan-400 p-3 bg-slate-900/70 text-white" type="email" id="email" name="email" required>
-        </div>
-        <div>
-          <label class="block font-semibold mb-1 text-left" for="message">Message</label>
-          <textarea class="w-full rounded border border-cyan-400 p-3 bg-slate-900/70 text-white" id="message" name="message" rows="4" required></textarea>
-        </div>
-        <button class="w-full bg-fuchsia-500 hover:bg-cyan-400 text-slate-900 font-bold rounded py-3 text-xl transition" type="submit">Send Message</button>
-      </form>
+      <div class="text-white/60 mt-6 text-sm">
+        No forms, no friction—just real conversation.
+      </div>
     </div>
   </section>
 
@@ -218,26 +184,8 @@
     <p class="text-sm text-cyan-200">Built for the future. Made with care.</p>
   </footer>
 
-  <!-- Animations -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Simple fade/slide animation
-    document.addEventListener('DOMContentLoaded', ()=>{
-      document.querySelectorAll('.animate-fadein').forEach((el, i)=>{
-        setTimeout(()=>el.style.opacity='1', 100 + i * 200);
-        el.style.opacity='0';
-        el.style.transition='opacity 1.3s cubic-bezier(.4,0,.2,1)';
-      });
-      document.querySelectorAll('.animate-slidein').forEach((el, i)=>{
-        el.style.opacity='0';
-        el.style.transform='translateY(40px)';
-        setTimeout(()=>{
-          el.style.opacity='1';
-          el.style.transform='translateY(0)';
-          el.style.transition='all 1.2s cubic-bezier(.4,0,.2,1)';
-        }, 300 + i*180);
-      });
-    });
   </script>
 </body>
 </html>
