@@ -1,0 +1,27 @@
+=================================================================
+PERMANENT 301 REDIRECTS
+This file redirects traffic from the old mcr.ae site structure
+to the new, optimized pages to preserve user experience and SEO value.
+=================================================================
+--- Core Page Redirects ---
+/gary-mcrae                     /about.html                     301
+/fractional-cmo-singapore       /fractional-cmo.html            301
+/contact                        /contact.html                   301
+
+--- Blog / Lab Content Redirects ---
+Redirecting the main blog page to the new homepage for now.
+This can be updated to a new /insights/ page later.
+/the-lab                        /index.html                     301
+
+Redirecting individual blog posts to the most relevant informational page
+or to the homepage as a fallback.
+/the-lab/what-is-a-fractional-cmo /fractional-cmo.html          301
+/the-lab/the-art-of-the-rebrand   /services.html                  301
+/the-lab/marketing-to-the-human-at-the-end-of-the-api /about.html 301
+/the-lab/the-slow-death-of-third-party-cookies /fractional-cmo.html 301
+/the-lab/how-to-build-a-brand-that-people-actually-care-about /services.html 301
+/the-lab/the-inconvenient-truth-about-marketing-to-millennials-in-asia /about.html 301
+
+--- Catch-all for any other old pages ---
+This is a fallback to prevent 404s for any missed URLs.
+/* /index.html                     302
