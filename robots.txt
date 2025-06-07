@@ -1,2 +1,16 @@
+For all web crawlers, including search engines and AI bots
 User-agent: *
-Disallow: /
+Allow: /
+
+Allow AI crawlers like Google's and others to access the site for training and understanding.
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Location of the sitemap file
+Sitemap: https://www.mcr.ae/sitemap.xml

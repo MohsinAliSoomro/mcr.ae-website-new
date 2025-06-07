@@ -1,2 +1,4 @@
 /*
-  X-Robots-Tag: noindex, nofollow
+The X-Robots-Tag has been removed from this file.
+Search engine and AI crawler access is now controlled by the robots.txt file.
+*/
