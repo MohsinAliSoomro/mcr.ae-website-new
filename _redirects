@@ -22,6 +22,5 @@ or to the homepage as a fallback.
 /the-lab/how-to-build-a-brand-that-people-actually-care-about /services.html 301
 /the-lab/the-inconvenient-truth-about-marketing-to-millennials-in-asia /about.html 301
 
---- Catch-all for any other old pages ---
-This is a fallback to prevent 404s for any missed URLs.
-/* /index.html                     302
+The catch-all rule that was previously here has been removed
+to allow the custom 404.html page to be displayed correctly.
