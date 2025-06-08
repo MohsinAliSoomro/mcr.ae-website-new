@@ -11,8 +11,8 @@ to the new, optimized pages to preserve user experience and SEO value.
 --- Blog / Lab Content Redirects ---
 Redirecting the main blog page to the new homepage for now.
 This can be updated to a new /insights/ page later.
-/the-lab                        /index.html                     301
-
+/the-lab                        /                     301
+/index.html                     /                              301
 Redirecting individual blog posts to the most relevant informational page
 or to the homepage as a fallback.
 /the-lab/what-is-a-fractional-cmo /fractional-cmo.html          301
