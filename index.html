@@ -215,34 +215,45 @@
             navContent.classList.add('nav-initial', 'glass-card');
         }
     });
+  
     document.addEventListener('DOMContentLoaded', () => {
+      try {
         const cursorDot = document.getElementById('cursor-dot');
         const cursorRing = document.getElementById('cursor-ring');
+        if (!cursorDot || !cursorRing) return;
+  
         let dotX = 0, dotY = 0;
         let ringX = 0, ringY = 0;
         let animationFrameId = null;
-        window.addEventListener('mousemove', (e) => {
-            dotX = e.clientX;
-            dotY = e.clientY;
-            if (animationFrameId === null) {
-                animationFrameId = requestAnimationFrame(animateCursor);
-            }
-        });
+  
         const animateCursor = () => {
-            cursorDot.style.left = `${dotX}px`;
-            cursorDot.style.top = `${dotY}px`;
-            ringX += (dotX - ringX) * 0.2;
-            ringY += (dotY - ringY) * 0.2;
-            cursorRing.style.left = `${ringX}px`;
-            cursorRing.style.top = `${ringY}px`;
-            animationFrameId = requestAnimationFrame(animateCursor);
+          cursorDot.style.left = `${dotX}px`;
+          cursorDot.style.top = `${dotY}px`;
+          ringX += (dotX - ringX) * 0.2;
+          ringY += (dotY - ringY) * 0.2;
+          cursorRing.style.left = `${ringX}px`;
+          cursorRing.style.top = `${ringY}px`;
+          animationFrameId = requestAnimationFrame(animateCursor);
         };
-        document.querySelectorAll('a, button, [role="button"]').forEach(el => {
-            el.addEventListener('mouseenter', () => cursorRing.classList.add('cursor-interactive'));
-            el.addEventListener('mouseleave', () => cursorRing.classList.remove('cursor-interactive'));
+  
+        window.addEventListener('mousemove', (e) => {
+          dotX = e.clientX;
+          dotY = e.clientY;
+          if (animationFrameId === null) {
+            animationFrameId = requestAnimationFrame(animateCursor);
+          }
         });
+  
+        document.querySelectorAll('a, button, [role="button"]').forEach(el => {
+          el.addEventListener('mouseenter', () => cursorRing.classList.add('cursor-interactive'));
+          el.addEventListener('mouseleave', () => cursorRing.classList.remove('cursor-interactive'));
+        });
+      } catch (e) {
+        console.error('Cursor script error:', e);
+      }
     });
   </script>
+  
 
 </body>
 </html>
