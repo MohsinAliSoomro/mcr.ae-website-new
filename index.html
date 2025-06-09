@@ -6,8 +6,8 @@
   <title>Gary McRae | Fractional CMO Singapore & Asia</title>
   <meta name="description" content="I’m Gary. I help businesses in Singapore and Asia break through with Fractional CMO leadership, digital know-how, and hands-on partnership." />
   
-  <!-- Tailwind CSS CDN -->
-  <script src="/tailwind.min.js"></script>
+  <!-- Tailwind CSS CDN (Corrected Path) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   
   <!-- Google Fonts -->
@@ -204,7 +204,13 @@
   </footer>
 
   <script>
+    // This script block contains the logic for the cursor animation and other page interactions.
+    // It's placed at the end of the body to ensure all HTML elements are loaded before the script runs.
+    
+    // Set the current year in the footer.
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Navigation scroll effect
     const navContent = document.getElementById('nav-content');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -216,10 +222,13 @@
         }
     });
   
+    // Custom cursor animation logic
     document.addEventListener('DOMContentLoaded', () => {
       try {
         const cursorDot = document.getElementById('cursor-dot');
         const cursorRing = document.getElementById('cursor-ring');
+        
+        // Ensure cursor elements exist before proceeding
         if (!cursorDot || !cursorRing) return;
   
         let dotX = 0, dotY = 0;
@@ -227,23 +236,29 @@
         let animationFrameId = null;
   
         const animateCursor = () => {
+          // Move the dot instantly
           cursorDot.style.left = `${dotX}px`;
           cursorDot.style.top = `${dotY}px`;
+          
+          // Move the ring with a smoothing delay
           ringX += (dotX - ringX) * 0.2;
           ringY += (dotY - ringY) * 0.2;
           cursorRing.style.left = `${ringX}px`;
           cursorRing.style.top = `${ringY}px`;
+          
           animationFrameId = requestAnimationFrame(animateCursor);
         };
   
         window.addEventListener('mousemove', (e) => {
           dotX = e.clientX;
           dotY = e.clientY;
+          // Start the animation loop if it's not already running
           if (animationFrameId === null) {
             animationFrameId = requestAnimationFrame(animateCursor);
           }
         });
   
+        // Add hover effect listeners to all interactive elements
         document.querySelectorAll('a, button, [role="button"]').forEach(el => {
           el.addEventListener('mouseenter', () => cursorRing.classList.add('cursor-interactive'));
           el.addEventListener('mouseleave', () => cursorRing.classList.remove('cursor-interactive'));
@@ -254,6 +269,5 @@
     });
   </script>
   
-
 </body>
 </html>
