@@ -26,7 +26,31 @@ const PortableTextComponents = {
                     </SyntaxHighlighter>
                 </div>
             );
-        }
+        },
+
+        // ✅ Table rendering
+        table: ({ value }: any) => {
+            return (
+                <div className="overflow-x-auto my-6">
+                    <table className="min-w-full border border-gray-300 text-sm text-left">
+                        <tbody>
+                            {value?.rows?.map((row: any, rowIndex: number) => (
+                                <tr key={rowIndex}>
+                                    {row?.cells?.map((cell: string, cellIndex: number) => (
+                                        <td
+                                            key={cellIndex}
+                                            className="border border-gray-300 px-4 py-2"
+                                        >
+                                            {cell}
+                                        </td>
+                                    ))}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            );
+        },
 
 
 

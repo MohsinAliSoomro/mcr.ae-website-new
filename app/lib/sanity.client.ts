@@ -4,5 +4,5 @@ export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   apiVersion: "2023-06-01",
-  useCdn: false, // set to `false` to bypass the CDN and always get fresh data
+  useCdn: true, // set to `false` to bypass the CDN and always get fresh data
 });

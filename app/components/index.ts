@@ -14,3 +14,5 @@ export { default as AboutSection } from "./AboutSection";
 export { default as RelatedPosts } from "./RelatedPosts";
 export { default as ContactSection } from "./ContactSection";
 export { default as SkeletonCard } from "./SkeletonCard";
+export { default as ShareButtons } from "./ShareButtons";
+export { default as NextComponent } from "./NextComponent";
