@@ -6,17 +6,25 @@ import RelatedPosts from './RelatedPosts';
 import { useRouter } from "next/navigation";
 import NextComponent from './NextComponent';
 import PreviousPost from './PreviousPost';
+import Head from 'next/head';
 
 export default function BlogDetail({ blogDetail, relatedPosts, previousPost, nextPost }: any) {
     const router = useRouter();
+    console.log("Detail", blogDetail);
 
 
     return (
         <>
-
+            <Head>
+                <title>{blogDetail.metaTitle || blogDetail.title}</title>
+                <meta name="description" content={blogDetail.description} />
+                <meta property="og:title" content={blogDetail.metaTitle || blogDetail.title} />
+                <meta property="og:description" content={blogDetail.description} />
+                <meta property="og:image" content={blogDetail.ogImage?.asset?.url || blogDetail.mainImage?.asset?.url} />
+            </Head>
             <div className="bg-[#fff] w-full py-16 min-h-[20vh] flex flex-col justify-between">
                 <div className="flex flex-col justify-center gap-4 px-4">
-                    <h1 className="font-heading text-4xl text-center font-semibold">
+                    <h1 className="mx-auto font-heading text-4xl w-8/12 text-center font-semibold">
                         {blogDetail.title}
                     </h1>
                     {/* Optional description */}
@@ -45,7 +53,7 @@ export default function BlogDetail({ blogDetail, relatedPosts, previousPost, nex
 
                 <main className="flex flex-col px-1 max-w-6xl mx-auto">
                     <>
-                        <h2 className="text-4xl mb-4 font-semibold text-gray-800 leading-tight mt-10">
+                        <h2 className="text-4xl w-full md:w-[63%] mb-4 font-semibold text-gray-800 leading-tight mt-10">
                             {blogDetail.title}
                         </h2>
                         <div className='flex justify-between gap-10'>
@@ -110,6 +118,40 @@ export default function BlogDetail({ blogDetail, relatedPosts, previousPost, nex
                         </div>
 
 
+                        {blogDetail.faq && blogDetail.faq.length > 0 && (
+                            <section className="mt-12">
+                                <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+                                <div className="space-y-6">
+                                    {blogDetail.faq.map((item: any, idx: number) => (
+                                        <div key={idx} className="border rounded p-4 bg-gray-50">
+                                            <h3 className="font-semibold">{item.question}</h3>
+                                            <p className="text-gray-700">{item.answer}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+                        )}
+
+                        {/* {blogDetail?.categories?.map((cat: any) => (
+                            <span key={cat?._id}>{cat.title}</span>
+                        ))} */}
+
+                        {blogDetail?.categories && blogDetail?.categories?.length > 0 && (
+
+                            <div className='mt-12 flex flex-col gap-3'>
+                                <div>Tags :</div>
+                                <div className='flex flex-wrap gap-2'>
+                                    {blogDetail?.tags?.map((tag: any) => (
+                                        <span key={tag?._id}
+                                            className="bg-gray-100 text-gray-800 text-sm font-medium px-3.5 py-1 rounded"
+
+                                        >{tag?.title}</span>
+                                    ))}
+                                </div>
+
+                            </div>
+                        )}
+
 
                     </>
 
@@ -146,6 +188,41 @@ export default function BlogDetail({ blogDetail, relatedPosts, previousPost, nex
 
 
             </div>
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BlogPosting",
+                        headline: blogDetail.title,
+                        image: blogDetail.ogImage?.asset?.url || blogDetail.mainImage?.asset?.url,
+                        author: blogDetail.author?.name,
+                        datePublished: blogDetail.publishedAt,
+                        description: blogDetail.description,
+                        mainEntityOfPage: blogDetail.slug?.current,
+                    }),
+                }}
+            />
+            {blogDetail.faq && blogDetail.faq.length > 0 && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "FAQPage",
+                            mainEntity: blogDetail.faq.map((f: any) => ({
+                                "@type": "Question",
+                                name: f.question,
+                                acceptedAnswer: {
+                                    "@type": "Answer",
+                                    text: f.answer,
+                                },
+                            })),
+                        }),
+                    }}
+                />
+            )}
 
         </>
 

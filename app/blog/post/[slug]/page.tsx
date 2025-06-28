@@ -3,6 +3,8 @@ import { getRelatedPosts } from "@/app/lib/getRelatedPosts";
 import { client } from "@/app/lib/sanity.client";
 
 export default async function BlogDetailPage({ params }: any) {
+  console.log("params", params);
+
   const slug = params.slug;
   const data = await client.fetch(
     `*[_type == "post" && slug.current == $slug][0]{
@@ -10,22 +12,34 @@ export default async function BlogDetailPage({ params }: any) {
       title,
       slug,
       description,
-      publishedAt,
-      updatedAt,
-      tags,
-       categories[]->{
-        _id, 
-              title, slug
-            },
-            author->{
-        name,
-        image {
+      metaTitle,
+      ogImage{
         asset->{
           _id,
           url
         }
       },
-      bio
+      publishedAt,
+      updatedAt,
+      tags[]->{
+        _id,
+        title,
+        slug
+      },
+      categories[]->{
+        _id, 
+        title, 
+        slug
+      },
+      author->{
+        name,
+        image {
+          asset->{
+            _id,
+            url
+          }
+        },
+        bio
       },
       mainImage{
         asset->{
@@ -34,10 +48,10 @@ export default async function BlogDetailPage({ params }: any) {
         },
       },
       body[]{
-  ...,
-  asset->
-},
-
+        ...,
+        asset->
+      },
+      faq,
     }`,
     { slug: slug }
   );
@@ -77,6 +91,8 @@ export default async function BlogDetailPage({ params }: any) {
   const categoryId = data?.categories?.[0]?._id || "";
 
   const relatedPosts = await getRelatedPosts(categoryId, slug);
+  console.log("categoryId", categoryId);
+  console.log("relatedPosts", relatedPosts); // should be filled now
 
   return (
     <div className="bg-[#f8fafc]">
@@ -85,6 +101,7 @@ export default async function BlogDetailPage({ params }: any) {
         previousPost={previousPost}
         nextPost={nextPost}
       />
+
     </div>
   );
 }

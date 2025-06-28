@@ -4,14 +4,18 @@ import { getCategories } from '../lib/getCategories';
 
 async function getPosts() {
   const data = await client.fetch(
-    `*[_type == "post"]{
+    `*[_type == "post" && !(_id in path('drafts.**'))] | order(publishedAt desc){
       _id,
       title,
       slug,
       description,
       publishedAt,
       updatedAt,
-      tags,
+      tags[]->{
+        _id,
+        title,
+        slug
+      },
       categories[]->{
         title, slug
       },

@@ -32,6 +32,7 @@ export default function BlogSection({ posts = [], categories = [] }: BlogSection
         new Set(categories.map((cat) => cat.title))
     ).sort();
 
+    console.log("All Categories Extracted:", allCategories);
 
 
     const handleDropdown = () => {

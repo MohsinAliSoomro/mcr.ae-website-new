@@ -29,9 +29,13 @@ export default function NextComponent({ nextPost }: NextComponentProps) {
 
     if (!nextPost) return null;
 
+    const truncateText = (text: string, limit: number) => {
+        return text.length > limit ? text.slice(0, limit) + "..." : text;
+    };
+
     return (
         <div
-            className="w-full group cursor-pointer border rounded-lg p-2 hover:bg-gray-100 flex gap-2"
+            className="w-full lg:w-8/12 group cursor-pointer border rounded-lg p-2 hover:bg-gray-100 flex gap-2"
             onClick={() => router.push(`/blog/post/${nextPost.slug.current}`)}
         >
             {nextPost?.mainImage?.asset?.url && (
@@ -44,7 +48,7 @@ export default function NextComponent({ nextPost }: NextComponentProps) {
                 />
             )}
             <p className="text-purple-600 font-semibold hover:underline text-xl">
-                {nextPost.title}
+                {truncateText(nextPost.title, 40)}
             </p>
             <div className="flex flex-1 justify-end items-end">
                 <FiArrowUpRight
