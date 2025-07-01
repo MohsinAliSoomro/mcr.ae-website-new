@@ -1,4 +1,5 @@
 import { createClient } from "next-sanity";
+import type { QueryParams } from "next-sanity";
 
 export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -16,3 +17,19 @@ export const previewClient = createClient({
   useCdn: false,
   token: process.env.SANITY_API_READ_TOKEN,
 });
+
+// Tag-based revalidation function for webhooks
+export async function sanityFetch<QueryResponse>({
+  query,
+  qParams = {},
+  tags,
+}: {
+  query: string;
+  qParams?: QueryParams;
+  tags: string[];
+}): Promise<QueryResponse> {
+  return client.fetch<QueryResponse>(query, qParams, {
+    cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache",
+    next: { tags },
+  });
+}

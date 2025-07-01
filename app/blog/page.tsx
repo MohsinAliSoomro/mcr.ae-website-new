@@ -1,10 +1,10 @@
 import { BlogSection } from '@/app/components';
-import { client } from "@/app/lib/sanity.client";
+import { sanityFetch } from "@/app/lib/sanity.client";
 import { getCategories } from '../lib/getCategories';
 
 async function getPosts() {
-  const data = await client.fetch(
-    `*[_type == "post" && !(_id in path('drafts.**'))] | order(publishedAt desc){
+  const data = await sanityFetch<any[]>({
+    query: `*[_type == "post" && !(_id in path('drafts.**'))] | order(publishedAt desc){
       _id,
       title,
       slug,
@@ -36,8 +36,9 @@ async function getPosts() {
         },
       },
       body,
-    }`
-  );
+    }`,
+    tags: ["post"],
+  });
   return data;
 }
 

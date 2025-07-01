@@ -35,7 +35,7 @@ export default function NextComponent({ nextPost }: NextComponentProps) {
 
     return (
         <div
-            className="w-full lg:w-8/12 group cursor-pointer border rounded-lg p-2 hover:bg-gray-100 flex gap-2"
+            className="w-full lg:w-10/12 group cursor-pointer border rounded-lg p-2 hover:bg-gray-100 flex gap-2"
             onClick={() => router.push(`/blog/post/${nextPost.slug.current}`)}
         >
             {nextPost?.mainImage?.asset?.url && (

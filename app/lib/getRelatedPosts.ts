@@ -1,4 +1,4 @@
-import { client } from "./sanity.client";
+import { sanityFetch, client } from "./sanity.client";
 
 export async function getRelatedPosts(
   categoryId: string,
@@ -25,9 +25,13 @@ export async function getRelatedPosts(
     }
   `;
 
-  const related = await client.fetch(query, {
-    categoryId,
-    currentPostSlug,
+  const related = await sanityFetch<any[]>({
+    query,
+    qParams: {
+      categoryId,
+      currentPostSlug,
+    },
+    tags: ["post"],
   });
 
   // ✅ Fallback: Get recent posts if no related found

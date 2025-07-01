@@ -1,13 +1,13 @@
 import { BlogDetail } from "@/app/components";
 import { getRelatedPosts } from "@/app/lib/getRelatedPosts";
-import { client } from "@/app/lib/sanity.client";
+import { sanityFetch, client } from "@/app/lib/sanity.client";
 
 export default async function BlogDetailPage({ params }: any) {
   console.log("params", params);
 
   const slug = params.slug;
-  const data = await client.fetch(
-    `*[_type == "post" && slug.current == $slug][0]{
+  const data = await sanityFetch<any>({
+    query: `*[_type == "post" && slug.current == $slug][0]{
       _id,
       title,
       slug,
@@ -53,8 +53,9 @@ export default async function BlogDetailPage({ params }: any) {
       },
       faq,
     }`,
-    { slug: slug }
-  );
+    qParams: { slug: slug },
+    tags: ["post"],
+  });
 
   if (!data) return <div>Post not found</div>;
 
@@ -97,11 +98,13 @@ export default async function BlogDetailPage({ params }: any) {
   return (
     <div className="bg-[#f8fafc]">
 
-      <BlogDetail blogDetail={data} relatedPosts={relatedPosts}
+      <BlogDetail 
+      blogDetail={data} 
+      relatedPosts={relatedPosts}
         previousPost={previousPost}
         nextPost={nextPost}
       />
-
+      
     </div>
   );
 }
